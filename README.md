@@ -17,11 +17,11 @@ This one actually uses the prawn class to print the images to pdf
 
 To Do:
 - [x] Sort out a better regex method for resizing IIIF images as /full/full/ is not comprehensive enough
-- [] Sort out regex so it can deal with the following options (at the moment it misses the last example)
+- [ ] Sort out regex so it can deal with the following options (at the moment it misses the last example)
 - https://framemark.vam.ac.uk//collections/2006AW1774/140,870,1800,1778/full/0/default.jpg
 - https://framemark.vam.ac.uk//collections/2006AW1878/full/full/0/default.jpg
 - https://framemark.vam.ac.uk//collections/2006AW1879/full/full/180/default.jpg
-- [] Uses the explicit method and create a custom prawn document to avoid the self issue
+- [ ] Uses the explicit method and create a custom prawn document to avoid the self issue
 
 To Use:
 ---
