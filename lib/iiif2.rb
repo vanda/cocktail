@@ -34,7 +34,6 @@ class ManifestPDF_V2
           end
         end
         footer(image_label)
-        start_new_page
       end
     end
   end
@@ -47,6 +46,7 @@ class ManifestPDF_V2
     bounding_box([@bb_width / 2, @footer_height], width: @footer_bb_width, height: @footer_height) do
       text image_label, align: :right
     end
+    start_new_page
   end
 
   private
