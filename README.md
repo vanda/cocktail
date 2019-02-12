@@ -10,21 +10,6 @@ combineIIIF.rb
 
 This will identify the relevant Manifest version and run the appropriate iteration.
 
-consoleTest.rb
-===
-
-This one just iterates through the parsed JSON file and prints to console. It's useful for debugging.
-
-iiif2.rb
-===
-
-This uses the mixin method of Prawn and generates a new document with layout options when the new class is instantiated. It works with the IIIF V2 Manifest.
-
-iiif3.rb
-===
-
-This uses the mixin method of Prawn and generates a new document with layout options when the new class is instantiated. It works with the IIIF V3 Manifest.
-
 To Use:
 ---
 
