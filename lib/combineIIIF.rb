@@ -2,6 +2,7 @@
 require 'prawn'
 require 'httparty'
 require 'open-uri'
+# require_relative '../font/vanda5.ttf'
 
 class ManifestPDF
   include Prawn::View
@@ -13,12 +14,14 @@ class ManifestPDF
   def initialize(url, layout = 'portrait', padding = 10)
     @url = url
     @layout = layout.to_sym
-    @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4')
+    @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
     @response = scrape
     @manifest = parse
     @padding = padding
     set_measurements
     set_manifest_version
+    self.font_families.update("vanda5" => {:normal => "./font/vanda5.ttf"})
+    font "vanda5"
     iterate
   end
 
@@ -28,17 +31,6 @@ class ManifestPDF
     else
       v3_iterate
     end
-  end
-
-  def footer(image_label)
-    bounding_box([@footer_padding, @footer_height], width: @footer_bb_width, height: @footer_height) do
-      footer_content = "\u{00A9} The Victoria and Albert Museum"
-      text footer_content, align: :left
-    end
-    bounding_box([@bb_width / 2, @footer_height], width: @footer_bb_width, height: @footer_height) do
-      text image_label, align: :right
-    end
-    start_new_page
   end
 
   private
@@ -52,13 +44,13 @@ class ManifestPDF
   end
 
   def set_measurements
-    @width = @layout == :portrait ? 523 : 770
-    @bb_width = @width - 2 * @padding
-    @height = @layout == :portrait ? 770 : 523
+    @width = @layout == :portrait ? 555 : 802
+    @bb_width = @width - (2 * @padding)
+    @height = @layout == :portrait ? 802 : 555
     @bb_top = @height
-    @bb_height = @height - (2 * @padding) - 50
-    @footer_height = 30
-    @footer_padding = 50
+    @bb_height = @height - (2 * @padding)
+    @footer_height = 15
+    @footer_padding = 20
     @footer_bb_width = (@bb_width - 2 * @footer_padding) / 2
   end
 
@@ -77,6 +69,7 @@ class ManifestPDF
       sequence['canvases'].each do |canvas|
         image_label = canvas['label']['@value'] ? canvas['label']['@value'] : canvas['label']
         bounding_box([@padding, @bb_top], width: @bb_width, height: @bb_height) do
+          fill_bounding
           canvas['images'].each do |image|
             image_url = image['resource']['@id']
             image_resize(image_url)
@@ -92,6 +85,7 @@ class ManifestPDF
   def v3_iterate
     @manifest['items'].each do |item|
       bounding_box([@padding, @bb_top], width: @bb_width, height: @bb_height) do
+        fill_bounding
         item['items'].each do |item_depth2|
           item_depth2['items'].each do |item_depth3|
             image_url = item_depth3['body']['id']
@@ -105,8 +99,32 @@ class ManifestPDF
   end
 end
 
+def fill_bounding
+  stroke_bounds
+  stroke do
+    fill_and_stroke_rounded_rectangle [0, @bb_height], @bb_width, @bb_height, 1
+    fill_color '000000'
+  end
+end
+
+def footer(image_label)
+  font_size(14)
+  bounding_box([@footer_padding, @footer_height + 15], width: @footer_bb_width, height: @footer_height) do
+    footer_content = "\u{00A9} The Victoria and Albert Museum"
+    # font('vanda5') do
+      text footer_content, align: :left, color: "FFFFFF"
+    # end
+  end
+  bounding_box([@bb_width / 2, @footer_height + 15], width: @footer_bb_width, height: @footer_height) do
+    # font('vanda5') do
+      text image_label, align: :right, color: "FFFFFF"
+    # end
+  end
+  start_new_page
+end
+
 def image_resize(image_url)
-  resize_image_url = image_url.gsub(/[^\/]*\/[^\/]*\/0/, "full/520,/0,")
+  resize_image_url = image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, "/full/1500,/0,")
   doc_image = open(resize_image_url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE})
   image doc_image, fit: [@bb_width, @bb_height], position: :center, vposition: :center
 end
