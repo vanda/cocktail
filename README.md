@@ -16,9 +16,16 @@ To Use:
 - Install dependencies `bundle install`
 - You can start the Command Line Interface (CLI) with `ruby bin/main`
 
+CLI Options:
+
+- URL
+- Landscape or Portrait
+- Additional Padding (not required)
+- Filename
+
 Example Manifests:
 
-V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json
+V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
 V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
 
 To test (no tests yet written):
