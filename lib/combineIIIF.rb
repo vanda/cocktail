@@ -8,21 +8,21 @@ class ManifestPDF
   include Prawn::View
   Prawn::Font::AFM.hide_m17n_warning = true
 
-  attr_accessor :url, :response, :manifest, :layout, :padding, :width, :height, 
+  attr_accessor :url, :response, :manifest, :layout, :padding, :width, :height,
                 :footer_height, :footer_bb_width, :footer_padding, :manifest_version
 
-  def initialize(url, layout = 'portrait', padding = 10)
+  def initialize(url, layout = 'portrait', padding = 10, font_size = 14)
     @url = url
     @layout = layout.to_sym
     @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
     @response = scrape
     @manifest = parse
     @padding = padding
+    @font_size = font_size
     set_measurements
     set_manifest_version
-    self.font_families.update("vanda5" => {:normal => "./font/vanda5.ttf"})
-    font "vanda5"
-    iterate
+    font_families.update('vanda5' => { normal: './font/vanda5.ttf' })
+    font 'vanda5'
   end
 
   def iterate
@@ -31,6 +31,11 @@ class ManifestPDF
     else
       v3_iterate
     end
+  end
+
+  def insert_title(location = './images/title.jpg')
+    image_center(location)
+    start_new_page
   end
 
   private
@@ -57,9 +62,7 @@ class ManifestPDF
   def set_manifest_version
     # V3 returns an array V2 is just a string
     version_url = @manifest['@context']
-    if version_url.kind_of?(Array)
-      version_url = version_url[1]
-    end
+    version_url = version_url[1] if version_url.is_a?(Array)
     regex = /presentation\/(\d)/
     @manifest_version = version_url.match(regex)[1].to_i
   end
@@ -72,15 +75,14 @@ class ManifestPDF
           fill_bounding
           canvas['images'].each do |image|
             image_url = image['resource']['@id']
-            image_resize(image_url)
+            doc_image = image_resize(image_url)
+            image_center(doc_image)
           end
         end
         footer(image_label)
       end
     end
   end
-
-
 
   def v3_iterate
     @manifest['items'].each do |item|
@@ -89,7 +91,8 @@ class ManifestPDF
         item['items'].each do |item_depth2|
           item_depth2['items'].each do |item_depth3|
             image_url = item_depth3['body']['id']
-            image_resize(image_url)
+            doc_image = image_resize(image_url)
+            image_center(doc_image)
           end
         end
       end
@@ -97,36 +100,39 @@ class ManifestPDF
       footer(image_label)
     end
   end
-end
 
-def fill_bounding
-  stroke_bounds
-  stroke do
-    fill_and_stroke_rounded_rectangle [0, @bb_height], @bb_width, @bb_height, 1
-    fill_color '000000'
+  def fill_bounding
+    stroke_bounds
+    stroke do
+      fill_and_stroke_rounded_rectangle [0, @bb_height], @bb_width, @bb_height, 1
+      fill_color '000000'
+    end
   end
-end
 
-def footer(image_label)
-  font_size(14)
-  bounding_box([@footer_padding, @footer_height + 15], width: @footer_bb_width, height: @footer_height) do
-    footer_content = "\u{00A9} The Victoria and Albert Museum"
-    # font('vanda5') do
-      text footer_content, align: :left, color: "FFFFFF"
-    # end
+  def footer(image_label)
+    bounding_box([@footer_padding, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
+      footer_content = "\u{00A9} The Victoria and Albert Museum"
+      text footer_content, align: :left, color: 'FFFFFF'
+    end
+    bounding_box([@bb_width / 2, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
+      text label_prefix(image_label), align: :right, color: 'FFFFFF'
+    end
+    start_new_page
   end
-  bounding_box([@bb_width / 2, @footer_height + 15], width: @footer_bb_width, height: @footer_height) do
-    # font('vanda5') do
-      text image_label, align: :right, color: "FFFFFF"
-    # end
-  end
-  start_new_page
-end
 
-def image_resize(image_url)
-  resize_image_url = image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, "/full/1500,/0,")
-  doc_image = open(resize_image_url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE})
-  image doc_image, fit: [@bb_width, @bb_height], position: :center, vposition: :center
+  def label_prefix(label, prefix = 'ff. ')
+    @prefix = prefix
+    new_label = label.gsub(/^\d+[vr]/, "#{@prefix} \\0")
+  end
+
+  def image_center(image_url)
+    doc_image = open(image_url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE)
+    image doc_image, fit: [@bb_width, @bb_height], position: :center, vposition: :center
+  end
+
+  def image_resize(image_url)
+    resize_image_url = image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, '/full/1500,/0,')
+  end
 end
 
 # test3 = ManifestPDF.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0)

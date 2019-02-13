@@ -3,13 +3,13 @@ require_relative 'combineIIIF.rb'
 module Console
   def self.start
     puts 'Please enter the url to the IIIF Manifest'
-    url= gets.chomp
+    url = gets.chomp
     # puts "Which page orientation? Press 1 for portrait, or 2 for landscape."
     # choice = gets.chomp.to_i
-    layout = "Which page orientation? Press 1 for portrait, or 2 for landscape."
+    layout = 'Which page orientation? Press 1 for portrait, or 2 for landscape.'
     puts layout
     continue = true
-    while continue do
+    while continue
       choice = gets.chomp.to_i
       if choice == 1
         layout_choice = 'portrait'
@@ -18,7 +18,7 @@ module Console
         layout_choice = 'landscape'
         continue = false
       else
-        puts "Please enter either 1 or 2"
+        puts 'Please enter either 1 or 2'
         puts layout
       end
     end
@@ -28,6 +28,8 @@ module Console
     puts 'Enter a filename for the pdf'
     filename = gets.chomp
     pdf = ManifestPDF.new(url, layout_choice, padding)
+    pdf.insert_title
+    pdf.iterate
     pdf.save_as("#{filename}.pdf")
     puts "Your pdf called #{filename}.pdf has been created and stored in this directory"
   end
