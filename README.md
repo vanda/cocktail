@@ -14,14 +14,16 @@ To Use:
 ---
 
 - Install dependencies `bundle install`
-- You can start the Command Line Interface (CLI) with `ruby bin/main`
+- You can start the Command Line Interface (CLI) with `ruby lib/options.rb`
 
 CLI Options:
 
-- URL
-- Landscape or Portrait
-- Additional Padding (not required)
-- Filename
+- -u URL
+- -l Landscape or Portrait
+- -p Additional Padding (not required)
+- -f Filename
+- -t include title page
+- -tp path to title page
 
 Example Manifests:
 

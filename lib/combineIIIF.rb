@@ -111,7 +111,7 @@ class ManifestPDF
 
   def footer(image_label)
     bounding_box([@footer_padding, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
-      footer_content = "\u{00A9} The Victoria and Albert Museum"
+      footer_content = "\u{00A9} Victoria and Albert Museum, London"
       text footer_content, align: :left, color: 'FFFFFF'
     end
     bounding_box([@bb_width / 2, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
@@ -120,7 +120,7 @@ class ManifestPDF
     start_new_page
   end
 
-  def label_prefix(label, prefix = 'ff. ')
+  def label_prefix(label, prefix = 'ff.')
     @prefix = prefix
     new_label = label.gsub(/^\d+[vr]/, "#{@prefix} \\0")
   end
