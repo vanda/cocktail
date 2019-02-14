@@ -24,8 +24,8 @@ class OptionParser
         options.url << url
       end
 
-      opts.on('-tp', '--titlepath', 'The url/path to the title image') do |tp|
-        options.tp = tp
+      opts.on('-i', '--title_image_path', 'The url/path to the title image') do |i|
+        options.i = i
       end
 
       # Boolean switch.
@@ -64,10 +64,12 @@ end
 # args = OptionParser.parse %w[--help]
 
 options = OptionParser.parse(ARGV)
+puts 'Preparing your pdf with the following options:'
 pp options
-pp ARGV
+# pp ARGV
 
 pdf = ManifestPDF.new(options.url, options.layout, options.padding, options.font_size)
 if options.title then pdf.insert_title(options.title_path) end
 pdf.iterate
 pdf.save_as("#{options.filename}.pdf")
+puts "Your #{options.filename}.pdf should be available in the root of this project"

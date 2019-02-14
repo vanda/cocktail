@@ -2,7 +2,6 @@
 require 'prawn'
 require 'httparty'
 require 'open-uri'
-# require_relative '../font/vanda5.ttf'
 
 class ManifestPDF
   include Prawn::View
@@ -11,14 +10,14 @@ class ManifestPDF
   attr_accessor :url, :response, :manifest, :layout, :padding, :width, :height,
                 :footer_height, :footer_bb_width, :footer_padding, :manifest_version
 
-  def initialize(url, layout = 'portrait', padding = 10, font_size = 14)
+  def initialize(url, layout = 'portrait', padding = 10, size)
     @url = url
     @layout = layout.to_sym
     @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
     @response = scrape
     @manifest = parse
     @padding = padding
-    @font_size = font_size
+    @font_size = size
     set_measurements
     set_manifest_version
     font_families.update('vanda5' => { normal: './font/vanda5.ttf' })
@@ -112,10 +111,10 @@ class ManifestPDF
   def footer(image_label)
     bounding_box([@footer_padding, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
       footer_content = "\u{00A9} Victoria and Albert Museum, London"
-      text footer_content, align: :left, color: 'FFFFFF'
+      text footer_content, align: :left, color: 'FFFFFF', size: @font_size
     end
     bounding_box([@bb_width / 2, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
-      text label_prefix(image_label), align: :right, color: 'FFFFFF'
+      text label_prefix(image_label), align: :right, color: 'FFFFFF', size: @font_size
     end
     start_new_page
   end
@@ -136,9 +135,12 @@ class ManifestPDF
 end
 
 # test3 = ManifestPDF.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0)
+# test3.insert_title
+# test3.iterate
 # puts test3.manifest_version
 # test3.save_as('v3.pdf')
 
 # test2 = ManifestPDF.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)
+# test2.iterate
 # puts test2.manifest_version
 # test2.save_as('v2.pdf')
