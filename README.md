@@ -30,7 +30,18 @@ Example Manifests:
 V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
 V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
 
-To test (no tests yet written):
+To test (manual only):
 
-- This command will run both the rspec tests and simplecov `bundle exec rspec`
-- To view the coverage detail as a webpage run `open coverage/index.html`
+For V3 Manifest:  
+test3 = ManifestPDF.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
+test3.extract  
+test3.insert_title  
+test3.page_generation  
+puts test3.manifest_version  
+test3.save_as('hash.pdf')  
+
+For V2 Manifest:  
+test2 = ManifestPDF.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
+test2.iterate  
+puts test2.manifest_version  
+test2.save_as('v2.pdf')  
