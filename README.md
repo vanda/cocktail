@@ -1,29 +1,35 @@
 IIIF Manifest to PDF
 -----
 
-Using the prawnpdf gem to convert IIIF manifest json urls to pdf
+Using the excellent prawnpdf gem to convert IIIF manifest json urls to pdf
 [Prawn manual](http://prawnpdf.org/manual.pdf)
 [Prawn Documentation](http://prawnpdf.org/docs/0.11.1/Prawn/Document.html)
 
-combineIIIF.rb
+extract_IIIF.rb
 ===
 
-This will identify the relevant Manifest version and run the appropriate iteration.
+This will identify the relevant Manifest version (2 or 3) and run the appropriate iteration.
 
 To Use:
 ---
 
 - Install dependencies `bundle install`
-- You can start the Command Line Interface (CLI) with `ruby lib/options.rb`
+- You can start the Command Line Interface (CLI) with `ruby lib/extract_options.rb`
 
 CLI Options:
 
-- -u URL
-- -l Landscape or Portrait
+- -u URL (Required)
+- -l Landscape or Portrait (this will autoomplete so l or p will suffice)
 - -p Additional Padding (not required)
-- -f Filename
-- -t include title page
-- -tp path to title page
+- -f Filename (default = no)
+- -t include title page (default = no)
+- -tp path to title page (default = /images/title.jpg)
+
+Example CLI instructions for V3  
+`ruby lib/extract_options.rb -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
+
+Example CLI instructions for V2  
+`ruby lib/extract_options.rb -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
 
 Example Manifests:
 
@@ -42,6 +48,13 @@ test3.save_as('hash.pdf')
 
 For V2 Manifest:  
 test2 = ManifestPDF.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
-test2.iterate  
+test2.extract  
+test2.insert_title  
+test2.page_generation  
 puts test2.manifest_version  
 test2.save_as('v2.pdf')  
+
+Shout Outs
+===
+
+- How to colour a page in prawnpdf using this technique to [stroke a bounding box](https://stackoverflow.com/questions/17757298/how-to-add-background-fill-color-to-a-bounding-box-in-prawn).

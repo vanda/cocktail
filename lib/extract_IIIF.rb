@@ -10,7 +10,7 @@ class ManifestPDF
   attr_accessor :url, :response, :manifest, :layout, :padding, :width, :height,
                 :footer_height, :footer_bb_width, :footer_padding, :manifest_version, :manifest_summary
 
-  def initialize(url, layout = 'portrait', padding = 10, size)
+  def initialize(url, layout = 'portrait', padding = 10, size, fill_color)
     @url = url
     @layout = layout.to_sym
     @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
@@ -86,8 +86,8 @@ class ManifestPDF
         canvas['images'].each do |image|
           @image_url = image['resource']['@id']
         end
+        @manifest_summary.push(image_url: @image_url, image_label: @image_label)
       end
-      @manifest_summary.push(image_url: @image_url, image_label: @image_label)
     end
   end
 
@@ -132,18 +132,8 @@ class ManifestPDF
   end
 
   def image_resize(image_url)
-    image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, '/full/1500,/0,')
+    # multiple of 4 forces quality improvement by bringing an image larger than required
+    new_size = "/full/!#{@bb_width * 4},#{@bb_height * 4}/0,"
+    image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, new_size)
   end
 end
-
-# test3 = ManifestPDF.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)
-# test3.extract
-# test3.insert_title
-# test3.page_generation
-# # puts test3.manifest_version
-# test3.save_as('hash.pdf')
-
-# test2 = ManifestPDF.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)
-# test2.iterate
-# puts test2.manifest_version
-# test2.save_as('v2.pdf')

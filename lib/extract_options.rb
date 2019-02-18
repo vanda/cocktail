@@ -2,6 +2,8 @@ require 'optparse'
 require 'pp'
 require_relative 'extract_IIIF.rb'
 
+ARGV << '-h' if ARGV.empty?
+
 class OptionParser
   def self.parse(args)
     options = OpenStruct.new
@@ -14,13 +16,13 @@ class OptionParser
     options.font_size = 14
 
     opt_parser = OptionParser.new do |opts|
-      opts.banner = "Usage: options.rb [options]"
+      opts.banner = 'Usage: options.rb [options]'
 
-      opts.separator ""
-      opts.separator "Specific options:"
+      opts.separator ''
+      opts.separator 'Specific options:'
 
       # Mandatory argument
-      opts.on('-u', '--url URL', 'The url to the IIIF Manifest') do |url|
+      opts.on('-u', '--url REQUIRED URL', 'The url to the IIIF Manifest') do |url|
         options.url << url
       end
 
@@ -29,12 +31,12 @@ class OptionParser
       end
 
       # Boolean switch.
-      opts.on("-t", "--[no-]title", "Add title page") do |t|
+      opts.on('-t', '--[no-]title', 'Add title page') do |t|
         options.title = t
       end
 
-      opts.on("-l [LAYOUT]", [:portrait, :landscape],
-        "Select layout type (portrait, landscape)") do |l|
+      opts.on('-l [LAYOUT]', [:portrait, :landscape],
+        'Select layout type (portrait, landscape)') do |l|
         options.layout = l
       end
 
@@ -54,19 +56,16 @@ class OptionParser
         puts opts
         exit
       end
-
     end
 
     opt_parser.parse!(args)
     options
   end
 end
-# args = OptionParser.parse %w[--help]
 
 options = OptionParser.parse(ARGV)
 puts 'Preparing your pdf with the following options:'
 pp options
-# pp ARGV
 
 pdf = ManifestPDF.new(options.url, options.layout, options.padding, options.font_size)
 if options.title then pdf.insert_title(options.title_path) end
