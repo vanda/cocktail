@@ -3,26 +3,31 @@ require 'prawn'
 require 'httparty'
 require 'open-uri'
 
-class ManifestPDF
+class Cocktail
   include Prawn::View
   Prawn::Font::AFM.hide_m17n_warning = true
 
-  attr_accessor :url, :response, :manifest, :layout, :padding, :width, :height,
-                :footer_height, :footer_bb_width, :footer_padding, :manifest_version, :manifest_summary
+  attr_accessor :url, :response, :manifest, :layout, :padding, :width,
+                :height, :padding_color, :include_prefix, :footer_height,
+                :footer_bb_width, :footer_padding, :manifest_version, 
+                :canvases, :footer_content
 
-  def initialize(url, layout = 'portrait', padding = 10, size, fill_color)
+  def initialize(url, layout = 'portrait', padding = 10, size, padding_color, 
+                 prefix, footer_content, custom_font_path)
     @url = url
     @layout = layout.to_sym
+    @padding_color = padding_color
     @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
     @response = scrape
     @manifest = parse
     @padding = padding
     @font_size = size
-    set_measurements
+    @include_prefix = prefix
+    @footer_content = footer_content
+    set_measurements_a4
     set_manifest_version
-    font_families.update('vanda5' => { normal: './font/vanda5.ttf' })
-    font 'vanda5'
-    @manifest_summary = []
+    update_font(custom_font_path) unless custom_font_path.empty?
+    @canvases = []
   end
 
   def insert_title(location = './images/title.jpg')
@@ -30,7 +35,7 @@ class ManifestPDF
     start_new_page
   end
 
-  def extract
+  def manifest_extract
     if @manifest_version == 2
       v2_extract
     else
@@ -39,14 +44,14 @@ class ManifestPDF
   end
 
   def page_generation
-    @manifest_summary.each_with_index do |item, index|
+    @canvases.each_with_index do |item, index|
       bounding_box([@padding, @bb_top], width: @bb_width, height: @bb_height) do
         fill_bounding
         doc_image = image_resize(item[:image_url])
         image_center(doc_image)
       end
       footer(item[:image_label])
-      if index != @manifest_summary.size - 1 then start_new_page end
+      start_new_page unless index == @canvases.size - 1
     end
   end
 
@@ -60,7 +65,7 @@ class ManifestPDF
     JSON.parse(@response.body)
   end
 
-  def set_measurements
+  def set_measurements_a4
     @width = @layout == :portrait ? 555 : 802
     @bb_width = @width - (2 * @padding)
     @height = @layout == :portrait ? 802 : 555
@@ -71,11 +76,16 @@ class ManifestPDF
     @footer_bb_width = (@bb_width - 2 * @footer_padding) / 2
   end
 
+  def update_font(custom_font_path)
+    font_families.update('custom_font' => { normal: custom_font_path })
+    font 'custom_font'
+  end
+
   def set_manifest_version
     # V3 returns an array V2 is just a string
     version_url = @manifest['@context']
     version_url = version_url[1] if version_url.is_a?(Array)
-    regex = /presentation\/(\d)/
+    regex = %r{presentation/(\d)}
     @manifest_version = version_url.match(regex)[1].to_i
   end
 
@@ -86,7 +96,7 @@ class ManifestPDF
         canvas['images'].each do |image|
           @image_url = image['resource']['@id']
         end
-        @manifest_summary.push(image_url: @image_url, image_label: @image_label)
+        @canvases.push(image_url: @image_url, image_label: @image_label)
       end
     end
   end
@@ -99,22 +109,21 @@ class ManifestPDF
         end
       end
       image_label = item['label']['@none'][0]
-      @manifest_summary.push(image_url: @image_url, image_label: image_label)
+      @canvases.push(image_url: @image_url, image_label: image_label)
     end
   end
 
   def fill_bounding
-    stroke_bounds
     stroke do
       fill_and_stroke_rounded_rectangle [0, @bb_height], @bb_width, @bb_height, 1
-      fill_color '000000'
+      fill_color @padding_color
     end
   end
 
   def footer(image_label)
     bounding_box([@footer_padding, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
-      footer_content = "\u{00A9} Victoria and Albert Museum, London"
-      text footer_content, align: :left, color: 'FFFFFF', size: @font_size
+      left_footer = "\u{00A9} #{@footer_content}"
+      text left_footer, align: :left, color: 'FFFFFF', size: @font_size
     end
     bounding_box([@bb_width / 2, @footer_height + @padding + 15], width: @footer_bb_width, height: @footer_height) do
       text label_prefix(image_label), align: :right, color: 'FFFFFF', size: @font_size
@@ -123,7 +132,7 @@ class ManifestPDF
 
   def label_prefix(label, prefix = 'ff.')
     @prefix = prefix
-    label.gsub(/^\d+[vr]/, "#{@prefix} \\0")
+    @include_prefix ? label.gsub(/^\d+[vr]/, "#{@prefix} \\0") : label
   end
 
   def image_center(image_url)
@@ -132,8 +141,8 @@ class ManifestPDF
   end
 
   def image_resize(image_url)
-    # multiple of 4 forces quality improvement by bringing an image larger than required
-    new_size = "/full/!#{@bb_width * 4},#{@bb_height * 4}/0,"
+    # default to max available size
+    new_size = '/full/full/0,'
     image_url.gsub(/(\/)(full|[\d,]+)\1(full|\d[\d,]+)\1(\d+)/, new_size)
   end
 end
