@@ -43,16 +43,14 @@ class Cocktail
     end
   end
 
-  def page_generation
-    @canvases.each_with_index do |item, index|
-      bounding_box([@padding, @bb_top], width: @bb_width, height: @bb_height) do
-        fill_bounding
-        doc_image = image_resize(item[:image_url])
-        image_center(doc_image)
-      end
-      footer(item[:image_label])
-      start_new_page unless index == @canvases.size - 1
-    end
+  def full_page_generation
+    array = @canvases
+    page_generation(array)
+  end
+
+  def range_page_generation(start, length)
+    array = @canvases[start, length]
+    page_generation(array)
   end
 
   # private
@@ -63,6 +61,18 @@ class Cocktail
 
   def parse
     JSON.parse(@response.body)
+  end
+
+  def page_generation(canvas_array)
+    canvas_array.each_with_index do |item, index|
+      bounding_box([@padding, @bb_top], width: @bb_width, height: @bb_height) do
+        fill_bounding
+        doc_image = image_resize(item[:image_url])
+        image_center(doc_image)
+      end
+      footer(item[:image_label])
+      start_new_page unless index == canvas_array.size - 1
+    end
   end
 
   def set_measurements_a4

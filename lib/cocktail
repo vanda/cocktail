@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'optparse'
 require 'pp'
 require_relative 'extract_IIIF.rb'
@@ -18,6 +19,8 @@ class OptionParser
     options.padding_color = '000000'
     options.footer_content = 'Victoria and Albert Museum, London'
     options.custom_font_path = './font/vanda5.ttf'
+    options.canvas_start
+    options.canvas_length
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = 'Usage: options.rb [options]'
@@ -53,6 +56,14 @@ class OptionParser
 
       opts.on('-i', '--title_image_path IMAGEPATH', 'The url/path to the title image') do |i|
         options.i = i
+      end
+
+      opts.on('-j', '--array_start START', OptionParser::DecimalInteger, 'If printing only a range of images, enter start value (0 index).') do |j|
+        options.canvas_start = j
+      end
+
+      opts.on('-k', '--array_length LENGTH', OptionParser::DecimalInteger, 'If printing only a range of images, enter length.') do |k|
+        options.canvas_length = k
       end
 
       opts.on('-l [LAYOUT]', [:portrait, :landscape],
@@ -94,6 +105,9 @@ pdf = Cocktail.new(options.url, options.layout, options.padding,
                    options.custom_font_path)
 if options.title then pdf.insert_title(options.title_path) end
 pdf.manifest_extract
-pdf.page_generation
+if options.canvas_length && options.canvas_start
+  then pdf.range_page_generation(options.canvas_start, options.canvas_length)
+else pdf.full_page_generation
+end
 pdf.save_as("#{options.filename}.pdf")
 puts "Your #{options.filename}.pdf should be available in the root of this project"

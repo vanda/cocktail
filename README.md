@@ -18,12 +18,20 @@ To Use:
 
 CLI Options:
 
-- -u URL (Required)
+- -a folio prefix (default = false)
+- -b left footer content. Starts with copyright symbol.
+- -c fill colour for image padding (default is black).
+- -d fontpath. Path to custom ttf file (not required)
+- -f Filename (default = manifest)
+- -h help
+- -i path to title page (default = /images/title.jpg)
+- -j array start. First argument for range printing (not required)
+- -k array length. Second argument for range printing (not required)
 - -l Landscape or Portrait (this will autoomplete so l or p will suffice)
-- -p Additional Padding (not required)
-- -f Filename (default = no)
-- -t include title page (default = no)
-- -tp path to title page (default = /images/title.jpg)
+- -p Additional Padding (default = 10)
+- -s Font size (default = 14)
+- -t include title page (default = false)
+- -u URL (Required)
 
 Example CLI instructions for V3  
 `ruby lib/extract_options.rb -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
