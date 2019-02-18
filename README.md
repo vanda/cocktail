@@ -14,7 +14,7 @@ To Use:
 ---
 
 - Install dependencies `bundle install`
-- You can start the Command Line Interface (CLI) with `ruby lib/extract_options.rb`
+- You can start the Command Line Interface (CLI) with `lib/cocktail`
 
 CLI Options:
 
@@ -34,10 +34,10 @@ CLI Options:
 - -u URL (Required)
 
 Example CLI instructions for V3  
-`ruby lib/extract_options.rb -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
+`lib/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
 
 Example CLI instructions for V2  
-`ruby lib/extract_options.rb -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
+`lib/cocktail -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
 
 Example Manifests:
 
@@ -47,20 +47,20 @@ V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/m
 To test (manual only):
 
 For V3 Manifest:  
-test3 = ManifestPDF.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
+test3 = Cocktail.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
 test3.extract  
 test3.insert_title  
-test3.page_generation  
+test3.full_page_generation  
 puts test3.manifest_version  
-test3.save_as('hash.pdf')  
+test3.save_as('v3test.pdf')  
 
 For V2 Manifest:  
-test2 = ManifestPDF.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
+test2 = Cocktail.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
 test2.extract  
 test2.insert_title  
-test2.page_generation  
+test2.full_page_generation  
 puts test2.manifest_version  
-test2.save_as('v2.pdf')  
+test2.save_as('v2test.pdf')  
 
 Shout Outs
 ===
