@@ -1,0 +1,611 @@
+// 20190220111639
+// https://iiif.bodleian.ox.ac.uk/examples/frankenstein/frankenstein_draft_seq.json
+
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.bodleian.ox.ac.uk/examples/frankenstein/frankenstein_draft_seq.json",
+  "@type": "sc:Manifest",
+  "label": "1816-1817 Draft of Frankenstein, from MS. Abinger c.56 and MS. Abinger c.57",
+  "metadata": [
+    {
+      "label": "Digital.Bodleian",
+      "value": "<span>View at: <a href=\"http://digital.bodleian.ox.ac.uk/inquire/p/53fd0f29-d482-46e1-aa9d-37829b49987d\">Digital.Bodleian</a></span><br><span>View at: <a href=\"http://digital.bodleian.ox.ac.uk/inquire/p/4d1b9912-7b6b-4276-900a-082f23f405fd\">Digital.Bodleian</a></span>"
+    },
+    {
+      "label": "Date",
+      "value": "1816-1817"
+    },
+    {
+      "label": "Accessrights",
+      "value": "Terms of use: http://digital.bodleian.ox.ac.uk/terms.html"
+    },
+    {
+      "label": "Id",
+      "value": "53fd0f29-d482-46e1-aa9d-37829b49987d"
+    },
+    {
+      "label": "Id",
+      "value": "4d1b9912-7b6b-4276-900a-082f23f405fd"
+    },
+    {
+      "label": "Creator",
+      "value": "Shelley, Mary Wollstonecraft [author]"
+    },
+    {
+      "label": "Creator",
+      "value": "Shelley, Percy Byssche [scribe]"
+    },
+    {
+      "label": "Creator",
+      "value": "Shelley, Mary Wollstonecraft [scribe]"
+    },
+    {
+      "label": "Displaylanguage",
+      "value": "English"
+    },
+    {
+      "label": "Source",
+      "value": "Bodleian Libraries"
+    },
+    {
+      "label": "Identifier",
+      "value": "ox:uuid: urn:uuid:53fd0f29-d482-46e1-aa9d-37829b49987d"
+    },
+    {
+      "label": "Identifier",
+      "value": "ox:uuid: urn:uuid:4d1b9912-7b6b-4276-900a-082f23f405fd"
+    },
+    {
+      "label": "Identifier",
+      "value": "ox:shelfmark: MS. Abinger c.56"
+    },
+    {
+      "label": "Identifier",
+      "value": "ox:shelfmark: MS. Abinger c.57"
+    },
+    {
+      "label": "Description",
+      "value": "Derivative IIIF Manifest for Bodleian Libraries MS. Abinger c.56 and MS. Abinger c.57, containing Mary Wollstonecraft Shelley’s Draft of Frankenstein, 1816-1817. This manifest sequences the images based on the linear sequence of the novel, as suggested by the Shelley-Godwin Archive. Not shown are pages unrelated to the Frankenstein draft. | Bodleian MS. Abinger c.56 (formerly designated Dep. 477/1) consists of 62 leaves originally bound in Notebook A, one of two now disbound notebooks in which Mary W. Shelley (MWS) drafted the two-volume version of Frankenstein. The draft in c.56 runs from the beginning to the end of Volume I, concluding just as the Creature is about to begin his tale to Victor. Bodleian MS. Abinger c.57 (formerly designated Dep. 534/1) consists of 94 leaves, of which 18 were originally bound in Notebook A and 76 in Notebook B, the notebooks in which Mary W. Shelley (MWS) drafted the two-volume version of Frankenstein. The draft in c.57 includes the entirety of Volume II, Chapters 1-18, and was written in Fall 1816. | Additional information: See http://shelleygodwinarchive.org"
+    },
+    {
+      "label": "Collection",
+      "value": "Modern Archives and Manuscripts"
+    },
+    {
+      "label": "Shelfmark",
+      "value": "MS. Abinger c.56"
+    },
+    {
+      "label": "Shelfmark",
+      "value": "MS. Abinger c.57"
+    },
+    {
+      "label": "Type",
+      "value": "Multi-page record"
+    },
+    {
+      "label": "Original manifest URI",
+      "value": "https://iiif.bodleian.ox.ac.uk/iiif/manifest/53fd0f29-d482-46e1-aa9d-37829b49987d.json"
+    },
+    {
+      "label": "Original manifest URI",
+      "value": "https://iiif.bodleian.ox.ac.uk/iiif/manifest/4d1b9912-7b6b-4276-900a-082f23f405fd.json"
+    },
+    {
+      "label": "Type",
+      "value": "GEN"
+    },
+    {
+      "label": "Title",
+      "value": "Frankenstein"
+    }
+  ],
+  "description": "Derivative IIIF Manifest for Bodleian Libraries MS. Abinger c.56 and MS. Abinger c.57, containing Mary Wollstonecraft Shelley’s Draft of Frankenstein, 1816-1817. This manifest sequences the images based on the linear sequence of the novel, as suggested by the Shelley-Godwin Archive. Not shown are pages unrelated to the Frankenstein draft. | Bodleian MS. Abinger c.56 (formerly designated Dep. 477/1) consists of 62 leaves originally bound in Notebook A, one of two now disbound notebooks in which Mary W. Shelley (MWS) drafted the two-volume version of Frankenstein. The draft in c.56 runs from the beginning to the end of Volume I, concluding just as the Creature is about to begin his tale to Victor. Bodleian MS. Abinger c.57 (formerly designated Dep. 534/1) consists of 94 leaves, of which 18 were originally bound in Notebook A and 76 in Notebook B, the notebooks in which Mary W. Shelley (MWS) drafted the two-volume version of Frankenstein. The draft in c.57 includes the entirety of Volume II, Chapters 1-18, and was written in Fall 1816. | Additional information: See http://shelleygodwinarchive.org",
+  "attribution": "From: Bodleian Libraries<br>Rights: Photo: © Bodleian Libraries, University of Oxford<br>Terms of Access: Terms of use: http://digital.bodleian.ox.ac.uk/terms.html<br>",
+  "logo": "http://www.bodleian.ox.ac.uk/__data/assets/image/0005/117176/logo.jpg",
+  "viewingHint": "paged",
+  "seeAlso": "http://digital.bodleian.ox.ac.uk/inquire/p/4d1b9912-7b6b-4276-900a-082f23f405fd",
+  "sequences": [
+    {
+      "@id": "https://iiif.bodleian.ox.ac.uk/iiif/sequence/53fd0f29-d482-46e1-aa9d-37829b49987d_default.json",
+      "@type": "sc:Sequence",
+      "label": "Default",
+      "canvases": [
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/cb631387-c307-454a-9aad-53b7e1541d2f.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 4r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/cb631387-c307-454a-9aad-53b7e1541d2f/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/cb631387-c307-454a-9aad-53b7e1541d2f",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/cb631387-c307-454a-9aad-53b7e1541d2f.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/321039b7-3c2a-46e2-8c2f-cbd9f040317c.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 4v",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/321039b7-3c2a-46e2-8c2f-cbd9f040317c/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/321039b7-3c2a-46e2-8c2f-cbd9f040317c",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/321039b7-3c2a-46e2-8c2f-cbd9f040317c.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/12ff6287-fc43-4ac3-91fb-86ea6ad98566.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 5r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/12ff6287-fc43-4ac3-91fb-86ea6ad98566/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/12ff6287-fc43-4ac3-91fb-86ea6ad98566",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/12ff6287-fc43-4ac3-91fb-86ea6ad98566.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/ac06667a-e105-4781-ad5d-209cad1c2ba8.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 1r",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/ac06667a-e105-4781-ad5d-209cad1c2ba8/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/ac06667a-e105-4781-ad5d-209cad1c2ba8",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/ac06667a-e105-4781-ad5d-209cad1c2ba8.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9c65c356-1677-4962-bb7e-9f63239f04f3.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 1v",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9c65c356-1677-4962-bb7e-9f63239f04f3/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9c65c356-1677-4962-bb7e-9f63239f04f3",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9c65c356-1677-4962-bb7e-9f63239f04f3.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/b925e987-4f63-4b77-9ff3-d87b89c15a7e.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 2r",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/b925e987-4f63-4b77-9ff3-d87b89c15a7e/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/b925e987-4f63-4b77-9ff3-d87b89c15a7e",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/b925e987-4f63-4b77-9ff3-d87b89c15a7e.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/8efbad27-1dfb-46e5-bb9f-1b18a27ceb87.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 2v",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/8efbad27-1dfb-46e5-bb9f-1b18a27ceb87/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/8efbad27-1dfb-46e5-bb9f-1b18a27ceb87",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/8efbad27-1dfb-46e5-bb9f-1b18a27ceb87.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9023a182-8032-4aeb-9d63-f8d155cbbd54.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 3r",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9023a182-8032-4aeb-9d63-f8d155cbbd54/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9023a182-8032-4aeb-9d63-f8d155cbbd54",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9023a182-8032-4aeb-9d63-f8d155cbbd54.json"
+            }
+          ]
+        },
+        {
+          "@id": "http://2373ea89-7787-4184-bd8d-61dff5610462",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 5r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/12ff6287-fc43-4ac3-91fb-86ea6ad98566/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/12ff6287-fc43-4ac3-91fb-86ea6ad98566",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/12ff6287-fc43-4ac3-91fb-86ea6ad98566.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/e8417a40-371d-4e21-af83-682e9a6d48ef.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 5v",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e8417a40-371d-4e21-af83-682e9a6d48ef/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e8417a40-371d-4e21-af83-682e9a6d48ef",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/e8417a40-371d-4e21-af83-682e9a6d48ef.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/e4717e64-f775-4412-82a8-35b689d9995e.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 6r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e4717e64-f775-4412-82a8-35b689d9995e/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e4717e64-f775-4412-82a8-35b689d9995e",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/e4717e64-f775-4412-82a8-35b689d9995e.json"
+            }
+          ]
+        },
+        {
+          "@id": "http://6e2138cd-248e-490d-8df8-1035200e1ec1",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 3r",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9023a182-8032-4aeb-9d63-f8d155cbbd54/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9023a182-8032-4aeb-9d63-f8d155cbbd54",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9023a182-8032-4aeb-9d63-f8d155cbbd54.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/74a00457-f107-4c41-92d3-31683fdd3bf5.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 3v",
+          "height": 6882,
+          "width": 5088,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/74a00457-f107-4c41-92d3-31683fdd3bf5/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6882,
+                "width": 5088,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/74a00457-f107-4c41-92d3-31683fdd3bf5",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/74a00457-f107-4c41-92d3-31683fdd3bf5.json"
+            }
+          ]
+        },
+        {
+          "@id": "http://07243174-6d78-450b-a462-46aa1aaeea49",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 6r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e4717e64-f775-4412-82a8-35b689d9995e/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/e4717e64-f775-4412-82a8-35b689d9995e",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/e4717e64-f775-4412-82a8-35b689d9995e.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/ad700b8b-6aed-4358-8647-31b7053cdb3f.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 6v",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/ad700b8b-6aed-4358-8647-31b7053cdb3f/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/ad700b8b-6aed-4358-8647-31b7053cdb3f",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/ad700b8b-6aed-4358-8647-31b7053cdb3f.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/0bd61445-8fa8-4f27-92d4-69f52b33b275.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 7r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/0bd61445-8fa8-4f27-92d4-69f52b33b275/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/0bd61445-8fa8-4f27-92d4-69f52b33b275",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/0bd61445-8fa8-4f27-92d4-69f52b33b275.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/caeb4722-eef0-4fd0-b2c1-4696c5480c33.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 7v",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/caeb4722-eef0-4fd0-b2c1-4696c5480c33/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/caeb4722-eef0-4fd0-b2c1-4696c5480c33",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/caeb4722-eef0-4fd0-b2c1-4696c5480c33.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/3470dcff-b350-4750-89e4-ed5094f4c09f.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 8r",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/3470dcff-b350-4750-89e4-ed5094f4c09f/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/3470dcff-b350-4750-89e4-ed5094f4c09f",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/3470dcff-b350-4750-89e4-ed5094f4c09f.json"
+            }
+          ]
+        },
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/86f6cb4a-fc4e-4da4-86c7-dcf767e50efb.json",
+          "@type": "sc:Canvas",
+          "label": "MS. Abinger c.56, fol. 8v",
+          "height": 6904,
+          "width": 5364,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/86f6cb4a-fc4e-4da4-86c7-dcf767e50efb/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 6904,
+                "width": 5364,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/86f6cb4a-fc4e-4da4-86c7-dcf767e50efb",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              },
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/86f6cb4a-fc4e-4da4-86c7-dcf767e50efb.json"
+            }
+          ]
+        }
+        ]
+    }
+    ]
+}

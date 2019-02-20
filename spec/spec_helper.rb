@@ -14,6 +14,8 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 SimpleCov.start do
   add_filter '/bin/'
   add_filter '/db/'

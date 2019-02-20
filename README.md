@@ -50,24 +50,35 @@ Example Manifests:
 V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
 V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
 
-To test (manual only):
+To test (automated but incomplete):
+---
+
+- run `rspec` for coverage and unit tests
+
+To test (manual end to end):
 ---
 
 For V3 Manifest:  
+
+```
 test3 = Cocktail.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
 test3.extract  
 test3.insert_title  
 test3.full_page_generation  
 puts test3.manifest_version  
 test3.save_as('v3test.pdf')  
+```
 
 For V2 Manifest:  
+
+```
 test2 = Cocktail.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
 test2.extract  
 test2.insert_title  
 test2.full_page_generation  
 puts test2.manifest_version  
 test2.save_as('v2test.pdf')  
+```
 
 Shout Outs
 ===
