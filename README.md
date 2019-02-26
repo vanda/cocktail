@@ -38,6 +38,7 @@ CLI Options:
 - -s Font size (default = 14)
 - -t include title page (default = false)
 - -u URL (Required)
+- -v --configfile PATH (you can specify the path to a YAML file holding the default options)
 
 Example CLI instructions for V3  
 `bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
@@ -49,6 +50,15 @@ Example Manifests:
 
 V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
 V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
+
+Example configuration file:
+
+```
+layout: 'landscape'
+title: true
+title_path: './images/title.jpg'
+footer_content: 'Hello from config file'
+```
 
 To test (automated but incomplete):
 ---
