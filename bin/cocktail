@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/extract_IIIF.rb'
+require_relative '../lib/option_parser.rb'
+
+options = OptionParser.parse(ARGV)
+puts 'Preparing your pdf with the following options:'
+pp options
+
+pdf = Cocktail.new(:url => options[:url],
+                   :layout =>options[:layout],
+                   :padding => options[:padding],
+                   :size => options[:font_size],
+                   :padding_color => options[:padding_color],
+                   :prefix => options[:prefix],
+                   :footer_content => options[:footer_content],
+                   :custom_font_path => options[:custom_font_path])
+
+if options[:title] then pdf.insert_title(options[:title_path]) end
+pdf.manifest_extract
+if options[:canvas_length] && options[:canvas_start]
+  then pdf.range_page_generation(options[:canvas_start], options[:canvas_length])
+else pdf.full_page_generation
+end
+pdf.save_as("#{options[:filename]}.pdf")
+puts "Your #{options[:filename]}.pdf should be available in the root of this project"

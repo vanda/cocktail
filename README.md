@@ -19,7 +19,7 @@ To Use:
 ---
 
 - Install dependencies `bundle install`
-- You can start the Command Line Interface (CLI) with `lib/cocktail` with flags appended for specific options. 
+- You can start the Command Line Interface (CLI) with `bin/cocktail` with flags appended for specific options. 
 - -u followed by manifest URL is the only required argument the rest will run with default options.
 
 CLI Options:
@@ -40,10 +40,10 @@ CLI Options:
 - -u URL (Required)
 
 Example CLI instructions for V3  
-`lib/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
+`bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
 
 Example CLI instructions for V2  
-`lib/cocktail -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
+`bin/cocktail -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
 
 Example Manifests:
 
