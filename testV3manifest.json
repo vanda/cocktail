@@ -1,0 +1,541 @@
+// 20190220111351
+// https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
+
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://iiif.vam.ac.uk//collections/MSL:1876:Forster:141:I/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "@none": [
+      "Codex Forster I (National Art Library, Museum no. MSL/1876/Forster/141/I)"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "@none": [
+          "Manifest"
+        ]
+      },
+      "value": {
+        "@none": [
+          "https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Description"
+        ]
+      },
+      "value": {
+        "@none": [
+          ""
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "title"
+        ]
+      },
+      "value": {
+        "@none": [
+          "Leonardo da Vinci, Codex Forster, Vol. I."
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": [
+          "Rights/License"
+        ]
+      },
+      "value": {
+        "@none": [
+          "https://www.vam.ac.uk/articles/terms-of-use"
+        ]
+      }
+    }
+  ],
+  "viewingDirection": "left-to-right",
+  "viewingHint": "paged",
+  "behavior": [
+    "paged"
+  ],
+  "items": [
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c0",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "Front Cover"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1773/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1773",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 1778,
+      "width": 1800,
+      "items": [
+        {
+          "id": "https://example.org/uuid/2d72a570-4a80-4d18-935d-a7c69e23ff64",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/56fb5216-e284-4f2e-9056-4bd9ce10b92c",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c0",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1773/140,870,1800,1778/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1778,
+                "width": 1800,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1773",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c1",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "Inside Front Cover"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1774/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1774",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 1778,
+      "width": 1800,
+      "items": [
+        {
+          "id": "https://example.org/uuid/d9d2f073-553c-4c04-82ab-88165c39b1fb",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/22c6792d-2a04-4b6e-b39c-92d4fa16b750",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c1",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1774/140,870,1800,1778/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1778,
+                "width": 1800,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1774",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c2",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "001r"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1877/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1877",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 1778,
+      "width": 1800,
+      "items": [
+        {
+          "id": "https://example.org/uuid/7119369c-73fe-4a3f-8de0-0b62afe3d6b4",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/280892d6-b65b-4a15-be3d-e5516bd4d9e7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c2",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1877/140,870,1800,1778/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 1778,
+                "width": 1800,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1877",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c3",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "001v"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1876/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1876",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 3072,
+      "width": 2048,
+      "items": [
+        {
+          "id": "https://example.org/uuid/19bdfc10-0ff4-4266-9557-8c50d2a08595",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/bfa24cb9-8163-4ba2-ab29-91352132406b",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c3",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1876/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3072,
+                "width": 2048,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1876",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c4",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "002r"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1875/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1875",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 3072,
+      "width": 2048,
+      "items": [
+        {
+          "id": "https://example.org/uuid/44ba1034-61ca-408e-951d-fb12063bc4b5",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/c2c2b261-36ed-4150-91eb-6959852405e7",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c4",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1875/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3072,
+                "width": 2048,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1875",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c5",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "002v"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1874/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1874",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 3072,
+      "width": 2048,
+      "items": [
+        {
+          "id": "https://example.org/uuid/df3798b0-1f98-4f5f-8915-5fb23c85435b",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/37edfb25-5345-4092-a3a9-6e9bf2a50604",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c5",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1874/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3072,
+                "width": 2048,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1874",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c6",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "003r"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1873/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1873",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 3072,
+      "width": 2048,
+      "items": [
+        {
+          "id": "https://example.org/uuid/f88ed90a-59a9-4b49-a37b-3e964ff549ce",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/708a5fdc-9f83-41e7-acd3-7c5e46c55dc4",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c6",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1873/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3072,
+                "width": 2048,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1873",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c7",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "003v"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1872/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1872",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 3563,
+      "width": 2768,
+      "items": [
+        {
+          "id": "https://example.org/uuid/e1a4fe81-6577-41c4-b6d8-7a96b7c4b5f1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/87411406-e85e-4d63-9586-516fd32c26ee",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c7",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1872/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 3563,
+                "width": 2768,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1872",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c8",
+      "type": "Canvas",
+      "label": {
+        "@none": [
+          "004r"
+        ]
+      },
+      "thumbnail": [
+        {
+          "id": "https://framemark.vam.ac.uk//collections/2006AW1871/full/80,100/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "id": "https://framemark.vam.ac.uk//collections/2006AW1871",
+              "type": "ImageService2",
+              "profile": "level1"
+            }
+          ]
+        }
+      ],
+      "height": 4318,
+      "width": 3427,
+      "items": [
+        {
+          "id": "https://example.org/uuid/6baf8dd0-2175-4b4a-875c-28ae359e6dd7",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://example.org/uuid/be7795b8-32ec-4938-9760-14dfe9fc89fe",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://iiif.vam.ac.uk/MSL:1876:Forster:141:I/canvas/c8",
+              "body": {
+                "id": "https://framemark.vam.ac.uk//collections/2006AW1871/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 4318,
+                "width": 3427,
+                "service": [
+                  {
+                    "@id": "https://framemark.vam.ac.uk//collections/2006AW1871",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level2.json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+    ]
+}

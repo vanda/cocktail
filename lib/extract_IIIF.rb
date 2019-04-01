@@ -9,24 +9,23 @@ class Cocktail
 
   attr_accessor :url, :response, :manifest, :layout, :padding, :width,
                 :height, :padding_color, :include_prefix, :footer_height,
-                :footer_bb_width, :footer_padding, :manifest_version, 
+                :footer_bb_width, :footer_padding, :manifest_version,
                 :canvases, :footer_content
 
-  def initialize(url, layout = 'portrait', padding = 10, size, padding_color, 
-                 prefix, footer_content, custom_font_path)
-    @url = url
-    @layout = layout.to_sym
-    @padding_color = padding_color
+  def initialize(opts = {})
+    @url = opts[:url]
+    @layout = opts[:layout].to_sym
+    @padding_color = opts[:padding_color]
+    @padding = opts[:padding]
+    @font_size = opts[:size]
+    @include_prefix = opts[:prefix]
+    @footer_content = opts[:footer_content]
     @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
+    update_font(opts[:custom_font_path]) unless opts[:custom_font_path].empty?
     @response = scrape
     @manifest = parse
-    @padding = padding
-    @font_size = size
-    @include_prefix = prefix
-    @footer_content = footer_content
     set_measurements_a4
     set_manifest_version
-    update_font(custom_font_path) unless custom_font_path.empty?
     @canvases = []
   end
 
@@ -36,11 +35,7 @@ class Cocktail
   end
 
   def manifest_extract
-    if @manifest_version == 2
-      v2_extract
-    else
-      v3_extract
-    end
+    @manifest_version == 2 ? v2_extract : v3_extract
   end
 
   def full_page_generation
