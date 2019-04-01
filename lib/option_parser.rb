@@ -7,19 +7,19 @@ ARGV << '-h' if ARGV.empty?
 class OptionParser
   def self.parse(args)
     options = {
-      :url => '',
-      :layout => 'portrait',
-      :padding => 10,
-      :filename => 'manifest',
-      :title => false,
-      :prefix => false,
-      :title_path => './images/title.jpg',
-      :font_size => 14,
-      :padding_color => '000000',
-      :footer_content => 'Victoria and Albert Museum, London',
-      :custom_font_path => './font/vanda5.ttf',
-      :canvas_start => nil,
-      :canvas_length => nil
+      url: '',
+      layout: 'portrait',
+      padding: 10,
+      filename: 'manifest',
+      title: false,
+      prefix: false,
+      title_path: './images/title.jpg',
+      font_size: 14,
+      padding_color: '000000',
+      footer_content: 'Victoria and Albert Museum, London',
+      custom_font_path: './font/vanda5.ttf',
+      canvas_start: nil,
+      canvas_length: nil
     }
 
     opt_parser = OptionParser.new do |opts|
@@ -65,8 +65,8 @@ class OptionParser
         options[:canvas_length] = k
       end
 
-      opts.on('-l [LAYOUT]', [:portrait, :landscape],
-        'Select layout type (portrait, landscape)') do |l|
+      opts.on('-l [LAYOUT]', %i[portrait landscape],
+              'Select layout type (portrait, landscape)') do |l|
         options[:layout] = l
       end
 
@@ -88,10 +88,9 @@ class OptionParser
         options[:url] << url
       end
 
-      opts.on("-v", "--configfile PATH", String, "Set config file") do |path|
-        options.merge!(Hash[YAML::safe_load(open(path)).map { |k, v| [k.to_sym, v] }])
+      opts.on('-v', '--configfile PATH', String, 'Set config file') do |path|
+        options.merge!(Hash[YAML.safe_load(open(path)).map { |k, v| [k.to_sym, v] }])
       end
-
     end
 
     opt_parser.parse!(args)

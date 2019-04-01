@@ -13,20 +13,20 @@ class Cocktail
                 :canvases, :footer_content
 
   def initialize(opts = {})
-      @url = opts[:url]
-      @layout = opts[:layout].to_sym
-      @padding_color = opts[:padding_color]
-      @padding = opts[:padding]
-      @font_size = opts[:size]
-      @include_prefix = opts[:prefix]
-      @footer_content = opts[:footer_content]
-      @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
-      update_font(opts[:custom_font_path]) unless opts[:custom_font_path].empty?
-      @response = scrape
-      @manifest = parse
-      set_measurements_a4
-      set_manifest_version
-      @canvases = []
+    @url = opts[:url]
+    @layout = opts[:layout].to_sym
+    @padding_color = opts[:padding_color]
+    @padding = opts[:padding]
+    @font_size = opts[:size]
+    @include_prefix = opts[:prefix]
+    @footer_content = opts[:footer_content]
+    @document = Prawn::Document.new(page_layout: @layout, page_size: 'A4', margin: 20)
+    update_font(opts[:custom_font_path]) unless opts[:custom_font_path].empty?
+    @response = scrape
+    @manifest = parse
+    set_measurements_a4
+    set_manifest_version
+    @canvases = []
   end
 
   def insert_title(location = './images/title.jpg')

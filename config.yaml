@@ -1,4 +1,7 @@
 layout: 'landscape'
 title: true
 title_path: './images/title.jpg'
-footer_content: 'Hello from config file'
+footer_content: 'Victoria and Albert Museum, London'
+filename: 'Pico'
+title: true
+prefix: true

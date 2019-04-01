@@ -43,6 +43,10 @@ CLI Options:
 Example CLI instructions for V3  
 `bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
 
+Or using the config file:
+`bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -v config.yaml`
+
+
 Example CLI instructions for V2  
 `bin/cocktail -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
 
@@ -94,3 +98,4 @@ Shout Outs
 ===
 
 - How to colour a page in prawnpdf using this technique to [stroke a bounding box](https://stackoverflow.com/questions/17757298/how-to-add-background-fill-color-to-a-bounding-box-in-prawn).
+- Using a [configuration file with optparse](https://stackoverflow.com/questions/4375530/ruby-configuration-file-parser-combined-with-optionparser)
