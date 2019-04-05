@@ -10,7 +10,7 @@ RSpec.describe Cocktail do
                    padding: 10, filename: 'manifest',
                    title: false,
                    prefix: false,
-                   title_path: './images/title.jpg',
+                   title_path: './test_image/test_title.jpg',
                    font_size: 14,
                    padding_color: '000000',
                    footer_content: 'V2 Test',
@@ -21,7 +21,7 @@ RSpec.describe Cocktail do
     v3_options = { url: 'http://example3.com/testV3manifest.json',
                    layout: 'landscape',
                    padding: 10, filename: 'manifest',
-                   title_path: './images/title.jpg',
+                   title_path: './test_image/test_title.jpg',
                    font_size: 14,
                    padding_color: '000000',
                    footer_content: 'V3 Test',
@@ -79,6 +79,18 @@ RSpec.describe Cocktail do
 
     it 'identifies a V3 manifest' do
       expect(@v3_cocktail.manifest_version).to match(3)
+    end
+  end
+
+  describe 'Manifest extract' do
+    it 'calls the V2 extract with a V2 manifest' do
+      expect(@v2_cocktail).to receive(:v2_extract)
+      @v2_cocktail.manifest_extract
+    end
+
+    it 'calls the V3 extract with a V3 manifest' do
+      expect(@v3_cocktail).to receive(:v3_extract)
+      @v3_cocktail.manifest_extract
     end
   end
 end
