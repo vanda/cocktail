@@ -1,26 +1,22 @@
 Cocktail - IIIF Manifest to PDF Generator
 -----
 
-This program takes a url input from a triple IIIF manifest and converts to a pdf document with some 'minimal' styling options.
-You caan set defaults within the `lib\cocktail' executable file
+This program takes a url input from a triple IIIF manifest (v2 or v3) and converts to a pdf document with some 'minimal' styling options.
+You can set defaults within the `option/parser` or `config.yaml` file
 
 ![Default options](images/default_options.png)
 
-It uses the excellent prawnpdf gem and additionalt functionality can be added with reference to the Prawn manual.
+It uses the excellent prawnpdf gem and additional functionality can be added with reference to the Prawn manual.
 [Prawn manual](http://prawnpdf.org/manual.pdf)
 [Prawn Documentation](http://prawnpdf.org/docs/0.11.1/Prawn/Document.html)
 
-extract_IIIF.rb
-===
 
-This will identify the relevant Manifest version (2 or 3) and run the appropriate iteration.
-
-To Use:
+To Use Cocktail:
 ---
 
 - Install dependencies `bundle install`
 - You can start the Command Line Interface (CLI) with `bin/cocktail` with flags appended for specific options. 
-- -u followed by manifest URL is the only required argument the rest will run with default options.
+- -u followed by manifest URL is the only required argument the rest will run with default options, specified in option/parser.
 
 CLI Options:
 
