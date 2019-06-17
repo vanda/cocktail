@@ -1,7 +1,7 @@
 Cocktail - IIIF Manifest to PDF Generator
 -----
 
-This program takes a url input from a triple IIIF manifest (v2 or v3) and converts to a pdf document with some 'minimal' styling options.
+This program takes a url input from a triple IIIF manifest (Presentation 2 or 3) and converts to a pdf document with some 'minimal' styling options.
 You can set defaults within the `option/parser` or `config.yaml` file
 
 ![Default options](images/default_options.png)
@@ -36,20 +36,16 @@ CLI Options:
 - -u URL (Required)
 - -v --configfile PATH (you can specify the path to a YAML file holding the default options)
 
-Example CLI instructions for V3  
-`bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v3test -t -s 14`
+Example CLI instructions for Presentation 2  
+`bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -l po -f v2test -t -s 14`
 
 Or using the config file:
 `bin/cocktail -u https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json -v config.yaml`
 
 
-Example CLI instructions for V2  
-`bin/cocktail -u https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json -l lan -f v2test -t -s 14`
-
 Example Manifests:
 
-V2 (best landscape) = https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
-V3 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
+V2 (best portrait) = https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json
 
 Example configuration file:
 
@@ -68,21 +64,10 @@ To test (automated but incomplete):
 To test (manual end to end):
 ---
 
-For V3 Manifest:  
+For P2 Manifest:  
 
 ```
-test3 = Cocktail.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
-test3.extract  
-test3.insert_title  
-test3.full_page_generation  
-puts test3.manifest_version  
-test3.save_as('v3test.pdf')  
-```
-
-For V2 Manifest:  
-
-```
-test2 = Cocktail.new('https://iiif-int.vam.ac.uk/collections/MSL:1861:7446/manifest.json', 'landscape', 0)  
+test2 = Cocktail.new('https://iiif.vam.ac.uk/collections/MSL:1876:Forster:141:I/manifest.json', 'portrait', 0, 14)  
 test2.extract  
 test2.insert_title  
 test2.full_page_generation  
