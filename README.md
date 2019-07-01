@@ -1,7 +1,7 @@
 Cocktail - IIIF Manifest to PDF Generator
 -----
 
-This program takes a url input from a triple IIIF manifest (Presentation 2 or 3) and converts to a pdf document with some 'minimal' styling options.
+This program takes a url input from a IIIF manifest (Presentation 2 or 3) and converts to a pdf document with some 'minimal' styling options.
 You can set defaults within the `option/parser` or `config.yaml` file
 
 ![Default options](images/default_options.png)
@@ -9,6 +9,15 @@ You can set defaults within the `option/parser` or `config.yaml` file
 It uses the excellent prawnpdf gem and additional functionality can be added with reference to the Prawn manual.
 [Prawn manual](http://prawnpdf.org/manual.pdf)
 [Prawn Documentation](http://prawnpdf.org/docs/0.11.1/Prawn/Document.html)
+
+Example of input and outputs:
+---
+
+At the V&A we have an [article that presents Piccolpassso's treatise on maiolica](https://www.vam.ac.uk/articles/piccolpassos-treatise-on-maiolica) with the IIIF manifest displayed using Universal Viewer for the page turning experience. We also have a download link for the pdf generated from the same IIIF manifest using Cocktail.
+
+- Link to manifest: https://iiif.vam.ac.uk/collections/MSL:1861:7446/manifest.json  
+- Link to pdf: https://s3-eu-west-1.amazonaws.com/vanda-production-assets/static/piccolpasso_vanda_010419.pdf  
+- Link to V&A article showing Universal Viewer experience https://www.vam.ac.uk/articles/piccolpassos-treatise-on-maiolica
 
 
 To Use Cocktail:
